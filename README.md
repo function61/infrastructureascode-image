@@ -7,9 +7,9 @@ What is this?
 
 Docker image with:
 
-- Packer
-- Terraform
-- Terraform Digitalocean provider
+- [Packer](https://www.packer.io) (to build VM images)
+- [Terraform](https://www.terraform.io/) (to spin VMs from images)
+- Terraform Digitalocean provider (to spin VMs on [DigitalOcean](https://www.digitalocean.com/))
 
 
 Usage
