@@ -16,8 +16,11 @@ RUN apt update && apt install -y curl unzip \
 	&& mkdir /terraform-plugins && cd /terraform-plugins \
 	&& echo 'provider "digitalocean" {}' > dummy.tf && terraform init
 
-# in the end we did something unorthodox - have a hack for Terraform to download Digitalocean
+# at the end we did something unorthodox - have a hack for Terraform to download Digitalocean
 # plugin so we can bake that into the Docker image. we did it because I don't trust the dynamic
 # load mechanism to deliver us a working plugin at the container start time..
 
 ADD entrypoint.sh /entrypoint.sh
+ADD bin /work/bin
+ADD droplet /work/droplet
+ADD digitalocean-coreos.json /work/digitalocean-coreos.json

@@ -1,0 +1,25 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "image": "coreos-stable",
+      "region": "ams3",
+      "size": "s-1vcpu-1gb",
+      "ssh_username": "core",
+      "snapshot_name": "fn61-coreos-{{isotime \"2006-01-02-03-04\"}}",
+      "snapshot_regions": []
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo systemctl stop update-engine",
+        "sudo systemctl mask update-engine",
+        "sudo systemctl stop locksmithd",
+        "sudo systemctl mask locksmithd",
+        "cat /etc/os-release | grep PRETTY_NAME"
+      ]
+    }
+  ]
+}
