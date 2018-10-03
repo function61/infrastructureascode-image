@@ -11,9 +11,4 @@ Docker image with:
 - [Terraform](https://www.terraform.io/) (to spin VMs from images)
 - Terraform Digitalocean provider (to spin VMs on [DigitalOcean](https://www.digitalocean.com/))
 
-
-Usage
------
-
-See concrete example of this image's usage from
-[function61/infrastructureascode](https://github.com/function61/infrastructureascode).
+Used internally from James [function61/james](https://github.com/function61/james).
