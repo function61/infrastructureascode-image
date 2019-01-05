@@ -13,6 +13,7 @@ Docker image with:
   - Cloudflare
   - DigitalOcean
   - AWS
+  - Hetzner
 
 Used internally from James [function61/james](https://github.com/function61/james).
 

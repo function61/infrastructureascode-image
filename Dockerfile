@@ -14,7 +14,7 @@ RUN apt update && apt install -y curl unzip \
 	&& unzip terraform.zip && mv terraform /usr/local/bin/terraform \
 	&& rm -rf /tmp/install \
 	&& cd /work \
-	&& echo 'provider "digitalocean" {} provider "aws" {} provider "cloudflare" {}' > dummy.tf \
+	&& echo 'provider "digitalocean" {} provider "aws" {} provider "cloudflare" {} provider "hcloud" {}' > dummy.tf \
 	&& terraform init \
 	&& rm dummy.tf
 
