@@ -1,13 +1,13 @@
 
 # module input parameters
-variable "box" {}
+variable "node" {}
 variable "image" {}
 variable "size" {}
 variable "cluster" {}
 variable "region" {}
 
 locals {
-	hostname = "${var.cluster}-${var.box}.do-${var.region}.fn61.net"
+	hostname = "${var.cluster}-${var.node}.do-${var.region}.fn61.net"
 	joonas2018_ssh_key_fingerprint = "d5:15:97:20:9d:f3:a1:27:97:d1:a6:ef:d5:e9:e2:4b"
 }
 

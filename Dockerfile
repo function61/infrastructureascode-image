@@ -23,5 +23,5 @@ RUN apt update && apt install -y curl unzip \
 # load mechanism to deliver us a working plugin at the container start time..
 
 COPY bin /work/bin
-COPY droplet /work/droplet
+COPY modules /work/modules
 COPY digitalocean-coreos.json /work/digitalocean-coreos.json
