@@ -23,4 +23,4 @@ RUN apt update && apt install -y curl unzip \
 
 COPY bin /work/bin
 COPY modules /work/modules
-COPY digitalocean-coreos.json /work/digitalocean-coreos.json
+COPY packerfiles /work/packerfiles
