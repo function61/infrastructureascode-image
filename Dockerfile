@@ -24,3 +24,4 @@ RUN apt update && apt install -y curl unzip \
 COPY bin /work/bin
 COPY modules /work/modules
 COPY packerfiles /work/packerfiles
+COPY bin/deploy-lambdafunc.sh /usr/local/bin/deploy-lambdafunc.sh
