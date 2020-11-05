@@ -1,0 +1,28 @@
+{
+  "builders": [
+    {
+      "type": "hcloud",
+      "snapshot_name": "fn61-flatcar-{{user `flatcar_version`}}-{{isotime \"2006-01-02-03-04\"}}",
+      "image": "ubuntu-20.04",
+      "location": "{{user `location`}}",
+      "server_type": "{{user `server_type`}}",
+      "rescue": "linux64",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "ignition.json",
+      "destination": "/root/ignition.json"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "curl --fail --location -o flatcar-install https://raw.githubusercontent.com/flatcar-linux/init/flatcar-master/bin/flatcar-install",
+        "chmod +x flatcar-install",
+        "./flatcar-install -d /dev/sda -C stable -V {{user `flatcar_version`}} -i ignition.json"
+      ]
+    }
+  ]
+}
