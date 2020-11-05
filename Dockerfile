@@ -13,7 +13,7 @@ RUN apt update && apt install -y curl unzip \
 	&& unzip terraform.zip && mv terraform /usr/local/bin/terraform \
 	&& rm -rf /tmp/install \
 	&& cd /work \
-	&& echo 'provider "digitalocean" {} provider "aws" {} provider "cloudflare" {} provider "hcloud" {}' > dummy.tf \
+	&& echo 'provider "digitalocean" { version = "~> 1.1.0" } provider "aws" { version = "~> 1.54.0" } provider "cloudflare" { version = "~> 1.10.0" } provider "hcloud" { version = "~> 1.7.0" }' > dummy.tf \
 	&& terraform init \
 	&& rm dummy.tf
 
